@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- LinearLayout に weight を使って余分なスペースを RecyclerView が埋めるようにします -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 開始時刻入力 -->
+        <EditText
+            android:id="@+id/editTextStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:hint="開始時刻 (例: 6)"
+            android:inputType="number" />
+
+        <!-- 終了時刻入力 -->
+        <EditText
+            android:id="@+id/editTextEnd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:hint="終了時刻 (例: 18)"
+            android:inputType="number"
+            android:layout_marginTop="8dp" />
+
+        <!-- 判定する時刻入力 -->
+        <EditText
+            android:id="@+id/editTextCheck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:hint="判定する時刻 (例: 12)"
+            android:inputType="number"
+            android:layout_marginTop="8dp" />
+
+        <!-- 判定ボタン -->
+        <Button
+            android:id="@+id/buttonCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="判定する"
+            android:layout_marginTop="12dp" />
+
+        <!-- 判定結果表示 -->
+        <TextView
+            android:id="@+id/textViewResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="結果表示"
+            android:textSize="18sp"
+            android:layout_marginTop="12dp" />
+
+        <!-- 結果保存ボタン -->
+        <Button
+            android:id="@+id/buttonSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="結果を保存"
+            android:layout_marginTop="12dp" />
+
+        <!-- 保存済み結果一覧（RecyclerView） -->
+        <!-- ここは空いたスペースを埋めるように weight を設定 -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewResults"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+</ScrollView>
